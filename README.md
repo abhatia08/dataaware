@@ -23,6 +23,7 @@ Please report issues to the [issues page](https://github.com/abhatia08/dataaware
 ## Teaching Staff
 
 - [Abhishek Bhatia](https://abhatia.me/) (![Github](http://i.imgur.com/9I6NRUm.png): [abhatia08](https://github.com/abhatia08)) 
+- Ashley Victor (![Github](http://i.imgur.com/9I6NRUm.png): [Ashley-Victor](https://github.com/abhatia08)) 
 
 ---
 ## Students
