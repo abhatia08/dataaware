@@ -32,4 +32,6 @@ Please report issues to the [issues page](https://github.com/abhatia08/dataaware
 - Ezana Enquobahrie (![Github](http://i.imgur.com/9I6NRUm.png): [Ezana0000](https://github.com/Ezana0000))
 - Shreya Dey (![Github](http://i.imgur.com/9I6NRUm.png): [shreydey](https://github.com/shreydey))
 - Angela Yang (![Github](http://i.imgur.com/9I6NRUm.png): [kirbysgf](https://github.com/kirbysgf))
+- Shriya Prabhakar (![Github](http://i.imgur.com/9I6NRUm.png): [shriya326](https://github.com/shriya326))
+
 
