@@ -25,5 +25,14 @@ Please report issues to the [issues page](https://github.com/abhatia08/dataaware
 - [Abhishek Bhatia](https://abhatia.me/) (![Github](http://i.imgur.com/9I6NRUm.png): [abhatia08](https://github.com/abhatia08))
 - Ashley Victor (![Github](http://i.imgur.com/9I6NRUm.png): [Ashley-Victor](https://github.com/abhatia08))
 
+---
+## Students
+- Ria Trivedi (![Github](http://i.imgur.com/9I6NRUm.png): [rmtrivedi](https://github.com/rmtrivedi))
+- Sophie Lawrence (![Github](http://i.imgur.com/9I6NRUm.png): [sophiejl12](https://github.com/sophiejl12))
+- Ezana Enquobahrie (![Github](http://i.imgur.com/9I6NRUm.png): [Ezana0000](https://github.com/Ezana0000))
+- Shreya Dey (![Github](http://i.imgur.com/9I6NRUm.png): [shreydey](https://github.com/shreydey))
+- Angela Yang (![Github](http://i.imgur.com/9I6NRUm.png): [kirbysgf](https://github.com/kirbysgf))
+- Shriya Prabhakar (![Github](http://i.imgur.com/9I6NRUm.png): [shriya326](https://github.com/shriya326))
+- Meha Datla (![Github](http://i.imgur.com/9I6NRUm.png): [mehadatla](https://github.com/mehadatla))
 
 
