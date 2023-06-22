@@ -3,7 +3,8 @@
 
 DataAware, short for Data Analytics for Teen Advancement, is a six-week program where high school students from the RTP travel each weekday to UNC Chapel Hill to attend courses and work with faculty mentors. In class, students will learn about health data analytics, digital health technology, machine learning, real-world problem solving and academic research. At the end of the program, students will present on their research. See more at https://dataaware.unc.edu/
 
-**Link to online modules** - https://datamine.unc.edu/onlinetraining/
+*Link to online modules* - https://datamine.unc.edu/onlinetraining/
+
 ---
 ## Project structure 
 
