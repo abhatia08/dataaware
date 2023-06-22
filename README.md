@@ -27,3 +27,4 @@ Please report issues to the [issues page](https://github.com/abhatia08/dataaware
 
 ---
 ## Students
+- Ria Trivedi (![Github](http://i.imgur.com/9I6NRUm.png): [rmtrivedi](https://github.com/rmtrivedi)) 
