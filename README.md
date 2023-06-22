@@ -23,8 +23,9 @@ Please report issues to the [issues page](https://github.com/abhatia08/dataaware
 ## Teaching Staff
 
 - [Abhishek Bhatia](https://abhatia.me/) (![Github](http://i.imgur.com/9I6NRUm.png): [abhatia08](https://github.com/abhatia08))
-- Ashley Victor (![Github](http://i.imgur.com/9I6NRUm.png): [Ashley-Victor](https://github.com/abhatia08))
-
+- Ashley Victor (![Github](http://i.imgur.com/9I6NRUm.png): [Ashley-Victor](https://github.com/Ashley-Victor))
+- Addie Griffin (![Github](http://i.imgur.com/9I6NRUm.png): [adgriffie](https://github.com/adgriffie))
+- [Kenzie Novak](https://kenziepn.github.io/) (![Github](http://i.imgur.com/9I6NRUm.png): [kenziepn](https://github.com/kenziepn))
 ---
 ## Students
 - Ria Trivedi (![Github](http://i.imgur.com/9I6NRUm.png): [rmtrivedi](https://github.com/rmtrivedi))
