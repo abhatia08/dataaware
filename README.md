@@ -6,10 +6,10 @@ DataAware, short for Data Analytics for Teen Advancement, is a six-week program 
 *Link to online modules* - https://datamine.unc.edu/onlinetraining/
 
 ---
-## Project structure 
+## Project structure
 
   - `./scripts/` contains all the example scripts to edit.
-  - `./modules/` contains all lessons for Data Mining 
+  - `./modules/` contains all lessons for Data Mining
   - `./resources/` contains additional resources to guide you through statistics, data science, and professional development.
 ---
 
@@ -22,11 +22,12 @@ Please report issues to the [issues page](https://github.com/abhatia08/dataaware
 ---
 ## Teaching Staff
 
-- [Abhishek Bhatia](https://abhatia.me/) (![Github](http://i.imgur.com/9I6NRUm.png): [abhatia08](https://github.com/abhatia08)) 
-- Ashley Victor (![Github](http://i.imgur.com/9I6NRUm.png): [Ashley-Victor](https://github.com/abhatia08)) 
+- [Abhishek Bhatia](https://abhatia.me/) (![Github](http://i.imgur.com/9I6NRUm.png): [abhatia08](https://github.com/abhatia08))
+- Ashley Victor (![Github](http://i.imgur.com/9I6NRUm.png): [Ashley-Victor](https://github.com/abhatia08))
 
 ---
 ## Students
-- Ria Trivedi (![Github](http://i.imgur.com/9I6NRUm.png): [rmtrivedi](https://github.com/rmtrivedi)) 
-- Sophie Lawrence (![Github](http://i.imgur.com/9I6NRUm.png): [sophiejl12](https://github.com/sophiejl12)) 
-- Ezana Enquobahrie (![Github](http://i.imgur.com/9I6NRUm.png): [Ezana0000](https://github.com/Ezana0000)) 
+- Ria Trivedi (![Github](http://i.imgur.com/9I6NRUm.png): [rmtrivedi](https://github.com/rmtrivedi))
+- Sophie Lawrence (![Github](http://i.imgur.com/9I6NRUm.png): [sophiejl12](https://github.com/sophiejl12))
+- Ezana Enquobahrie (![Github](http://i.imgur.com/9I6NRUm.png): [Ezana0000](https://github.com/Ezana0000))
+- Shreya Dey (![Github](http://i.imgur.com/9I6NRUm.png): [shreydey](https://github.com/shreydey))
