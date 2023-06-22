@@ -1,5 +1,5 @@
 # Create the vector
-char_vector <- c("LO", "MD", )
+char_vector <- c("LO", "MD", "SP", )
 
 # Randomly sort the vector
 sorted_vector <- sample(char_vector, size = length(char_vector))
