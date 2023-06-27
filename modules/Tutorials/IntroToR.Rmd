@@ -1,0 +1,111 @@
+---
+title: "Intro to R"
+author: "Abhishek Bhatia"
+date: "2023-06-27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Iris Dataset
+
+## Load in the Iris dataset
+
+```{r}
+library(datasets)
+data(iris)
+
+```
+
+View the first ten rows of the Iris dataset using the `head()` function
+```{r}
+# use head()
+```
+
+Summarize all the variables using the `summary()` function
+```{r}
+
+```
+
+## Tidyverse and the `dplyr` package
+
+Read the collection of packages here: https://www.tidyverse.org/
+
+```{r}
+# Install the `tidyverse` package
+
+# load `dplyr`
+```
+
+R is case-specific. Let's convert all the column names to lowercase to make this easier.
+```{r}
+names(iris) <- tolower(names(iris))
+```
+
+
+We will be using `dplyr` to manipulate data for now
+
+### 1. `filter()`
+```{r}
+# filter() the data for species virginica.
+virginica <- filter(iris, species == "virginica")
+
+# View the first ten rows using head()
+```
+
+Now, try this on your own. Select only `virginica` species with `sepal.length > 5`
+```{r}
+
+```
+
+### 2. Subsetting data using `select()`
+
+Sometimes, data are "high dimensional". So, we only want a few number of columns, and we "subset" them. Try this yourself. 
+
+```{r}
+# Subset the iris dataset to only select sepal.length, sepal.width, and petal.length. Name the new dataframe "small_df"
+
+
+```
+
+R is great at understanding vectors. If I wanted to logically list out all numbers from 1-100, I can do the following:
+```{r}
+1:100
+```
+Similarly, it understands column names as a character vector. Try using this logic to select all columns from `sepal.length` to `petal length`.
+```{r}
+
+```
+
+
+### 3. Changing variables with `mutate()`
+
+`mutate()` allows you to create new variables, or change existing ones without changing much of the data around them. 
+```{r}
+# Create a new variable "greater.half"
+iris <- mutate(iris, greater.half = sepal.width > 0.5 * sepal.length)
+
+tail(iris)
+```
+Note the difference between `head()` and `tail()`
+
+You can also use if/else statements to create "binary" or "dummy" variables as 0 and 1, instead of TRUE and FALSE, which is more useful for models. Try it below combining `mutate()` with `if_else()`
+
+```{r}
+# Mutate "greater.half" to now instead have 0 and 1 instead of TRUE and FALSE.
+
+```
+
+## Looking Ahead/Next time
+
+Examining how variables are distributed
+```{r}
+hist(iris$sepal.width)
+```
+You can also look at how two variables are related
+```{r}
+plot(iris$sepal.width, iris$sepal.length)
+```
+
