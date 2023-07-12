@@ -1,0 +1,194 @@
+---
+title: "Making Predictions!"
+author: "Abhishek Bhatia"
+date: "2023-07-27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Hospital ICU dataset
+Today, we will be building a model to predict hospital death based on data from an intensive care unit (ICU). Predicting patient death in the ICU is extremely important because determining which patients needs attention immediately can help to prioritize care in a way that prevents as many deaths as possible. 
+
+## Load the `tidyverse` library
+```{r}
+
+```
+
+
+## Read in in the dataset
+The hospital dataset is uploaded to Github, and can be found at https://raw.githubusercontent.com/e-cui/ENABLE-HiDAV-Online-Modules/master/Data%20Mining%20Modules/csv_files/t.csv
+
+1. Assign the url (in quotations, because it is a string) to an object called `urlfile`. 
+2. Next, use the `read_csv()` function to read in the csv. Within `read_csv()`, you can specify urls as `read_csv(url(...))`. Read in the csv, and name that dataset
+3. Use `head()` to peek at the data
+
+```{r}
+
+```
+
+## Cleaning the data
+
+We will need to change the variable types, since CSV files don't tell you what type of variable is contained in the data. Use the `str()` function to examine the dataset
+```{r}
+
+```
+
+Next, convert the following variables to a factor, using `mutate()` along with `as.factor`:
+- hospital_death
+- sepsis
+- cardiovascular_diagnosis
+- intubated_apache
+- gcs_eyes_apache
+- gcs_motor_apache
+
+Also, convert the following variables to numeric:
+- temp_apache
+- map_apache
+- h1_heartrate_max
+- d1_resprate_max
+- d1_potassium_max
+- d1_creatinine_max
+- d1_hematocrit_max
+- sodium_apache
+- wbc_apache
+- age
+- pre_icu_los_days
+- bmi
+
+
+As a reminder, the way you do this is:
+```
+df <- df %>% 
+mutate(variable1 = as.factor(variable1)) %>% 
+mutate (variable2 = as.numeric(variable2)) ....
+
+```
+
+```{r}
+
+```
+
+## Generate 3 distinct plots using `ggplot2`
+1. Plot the counts of hospital deaths
+2. Plot the relationship between hospital death and one variable
+3. Plot the relationship between hospital death and a second variable, using a different type of graph 
+
+```{r}
+
+```
+
+## Split data into training and testing datasets
+- Splitting the data in this manner is important because the model must be tested on data that it has never seen before. 
+- When splitting the data the training set should be larger than the testing to allow for more accurate predictions.
+
+### 1. Set a seed
+When you generate “random numbers” in R, you are actually generating pseudorandom numbers. These numbers are generated with an algorithm that requires a seed to initialize. Being pseudorandom instead of pure random means that, if you know the seed and the generator, you can predict (and reproduce) the output. In this tutorial you will learn the meaning of setting a seed, what does set.seed do in R, how does set.seed work, how to set or unset a seed, and hence, how to make reproducible outputs.
+
+```{r}
+# use set.seed() and set any random number as your seed
+```
+
+### 2. Split the dataset
+We will separate the data into 80:20, i.e. 80% of the data will be used to train the model, and 20% will be used to test it.
+
+```{r}
+# First, create a new column called "id" that corresponds to the row number. To do this, (assuming your dataset is called df), we can write "df$id <- 1:nrow(df)". This means, create a new id column in the dataset "df", starting from 1, till the number of rows in the dataframe df. Replicate this to create an id column for your dataset
+
+
+```
+
+Next, we split the dataset. To do this, we will "randomly sample" 80% of the dataset, using `dplyr`, and assign the two datasets as "train" and test". An example of how you do this is:
+
+```
+train <- df %>% dplyr::sample_frac(0.70)
+test  <- dplyr::anti_join(df, train, by = 'id')
+```
+"Anti_join" tells R to only keep all of the rows in the dataset "df", that you did not sample in the "train" dataset, and it can figure this out by looking at the id numbers of the rows that you samples in "train". Replicate this for your dataset, with the correct sample fraction of 80%. 
+
+```{r}
+
+```
+
+
+## Model selection
+Hospital deaht is a binary outcome, of 0 and 1. What type of model do you think we need to use here? Linear regression, or logistic regression?
+
+### 1. Train a simple model 
+
+Fit a model called `m1` that predicts hospital death as a function of any x variable you like
+Reminder, we use the `lm()` function to fit linear regression models, and `glm()` function to fit logistic regression models.
+
+```{r}
+# Fit model
+m1 <- 
+
+# Print the summary of your model
+summary(m1)
+```
+
+### 2. Train a second model, and compare it to `m1`.
+
+Usually, you build models by starting simple and adding additional variables, which we call "forward selection". `m2` will therefore have the same x variable as `m1`, but you can add a second variable to the equation.
+
+```{r}
+# Fit model
+m2 <- 
+
+# Print the summary of your model
+summary(m2)
+```
+A simple way to check whether your second model is better, or worse than your first model, is to compare a statistic called the AIC, which you can see at the bottom of your model summary. Models with smaller AIC values are usually better models. 
+
+```{r}
+# Print the summary of both models and look at the AIC values
+summary(m1)
+summary(m2)
+```
+
+You can also use a test called the `anova` test to compare two models. If `m2` is better than `m1`, you will see a statistically significant p-value. The code to do this is:
+```{r}
+anova(m1, m2, test = "LR")
+```
+
+
+### 3. Train additional models using forward selection, as many as you'd like until you're satisfied with the model that fits well.
+
+```{r}
+
+```
+
+
+Finally, call the model that you select `fit_model`. For example, if you selected `m2`, you can do this by typing `fit_model <- m2`.
+
+```{r}
+
+```
+
+## Making predictions
+We're finally ready to make predictions on our test dataset. To do this, we use the `predict()` function, save the predicted values as a new vector called "y_pred"
+
+```{r}
+test$y_pred<- predict(fit_model, test)
+```
+
+
+## Testing model performance
+Last, we create something called a confusion matrix, which will compare the actual values against the values that you predicted, and produce a score of how accurate your model is. 
+
+First install the `caret` package, and load it into R
+
+```{r}
+
+```
+
+Next, use the `confusionMatrix()` function to evaluate your model. `confusionMatrix()` takes two arguments, first the vector for your expected (actual) values `test$hospital_death`, and then your predicted values `test$y_pred`.
+
+```{r}
+
+```
+
+Once you're done, take a blue post-it note, write your accuracy score, and post it up on the whiteboard next to your name. 
+
