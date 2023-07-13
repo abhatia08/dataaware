@@ -1,5 +1,5 @@
 ---
-title: "Making Predictions!"
+title: "Making Predictions - Answers!"
 author: "Abhishek Bhatia"
 date: "2023-07-27"
 output: html_document
@@ -106,7 +106,7 @@ When you generate “random numbers” in R, you are actually generating pseudor
 
 ```{r}
 # use set.seed() and set any random number as your see
-set.seed(1234)
+set.seed(666)
 ```
 
 ### 2. Split the dataset
@@ -128,8 +128,9 @@ test  <- dplyr::anti_join(df, train, by = 'id')
 
 ```{r}
 # Split the dataset into train and test
-train <- df %>% dplyr::sample_frac(0.80)
+train <- df %>% dplyr::sample_frac(0.70)
 test  <- dplyr::anti_join(df, train, by = 'id')
+
 ```
 
 For a random forest model, we also want to separate out all the x variables from the y variable in both the training and testing data. It requires the y variable to be a vector, and you can convert a dataframe to a vector using the `unlist()` function. Follow the steps below:
@@ -142,8 +143,8 @@ For a random forest model, we also want to separate out all the x variables from
 
 ```{r}
 # Train_x and test_x
-train_x <- train %>% select(-c("hospital_death"))
-test_x <- test %>% select(-c("hospital_death"))
+train_x <- train %>% select(-c("hospital_death", "id"))
+test_x <- test %>% select(-c("hospital_death", "id"))
 
 # Train_y and test_y
 train_y <- train %>% select(c("hospital_death"))
@@ -195,7 +196,7 @@ mtry <- tuneRF(
   y = train_y,
   xtest = test_x,
   ytest = test_y,
-  ntreeTry = 500,
+  ntreeTry = 5000,
   stepFactor = 1.5,
   improve = 0.01,
   trace = TRUE,
@@ -221,6 +222,8 @@ rf_res_df <-
 best_nrounds <- rf_res_df %>%
   filter(MIN) %>%
   pull(ITERATION)
+
+best_nrounds
 ```
 
 
@@ -231,9 +234,9 @@ rf_final_model <-
   randomForest(
     x = train_x,
     y = train_y,
-    mtry = 5,
+    mtry = 6,
     importance = TRUE,
-    ntree = 223
+    ntree = 3000
   )
 
 rf_final_model
